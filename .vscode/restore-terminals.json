@@ -1,0 +1,18 @@
+{
+  "artificialDelayMilliseconds": 700,
+  "runOnStartup": true,
+  "terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "client",
+          "commands": ["npm run storybook"]
+        },
+        {
+          "name": "cmd",
+          "commands": []
+        }
+      ]
+    }
+  ]
+}

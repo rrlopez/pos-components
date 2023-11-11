@@ -1,0 +1,12 @@
+.navbar {
+  padding: 0 8px 0 0;
+
+  & .brand-section {
+    min-width: $sidebar-width-closed;
+  }
+  @screen sm {
+    & .brand-section.open {
+      min-width: $sidebar-width-opened;
+    }
+  }
+}

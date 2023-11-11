@@ -1,0 +1,133 @@
+.sidebar {
+  @apply text-white;
+  @apply shadow-2xl;
+  @apply h-screen;
+  @apply sm:h-[calc(100vh-4rem)];
+
+  min-width: $sidebar-width-opened;
+  translate: -100%;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  @screen sm {
+    min-width: $sidebar-width-closed;
+    translate: 0;
+    @apply shadow-none;
+    &.show {
+      min-width: $sidebar-width-closed;
+    }
+  }
+
+  @screen lg {
+    min-width: $sidebar-width-closed;
+    &.show {
+      min-width: $sidebar-width-opened;
+    }
+  }
+
+  &.show {
+    translate: 0;
+  }
+}
+
+.sidebar-item-container {
+  @apply relative;
+  @apply flex;
+  @apply flex-col;
+  @apply items-center;
+  @apply justify-center;
+
+  &:hover .sidebar-item-shortLabel {
+    @apply text-secondary;
+  }
+
+  & .sidebar-item-shortLabel {
+    @apply pointer-events-none;
+    @apply text-xs;
+    @apply relative;
+    @apply cursor-pointer;
+    @apply text-gray-300;
+  }
+}
+
+.sidebar-item {
+  @apply gap-3;
+  @apply cursor-pointer;
+  @apply relative;
+}
+
+.sidebar-button {
+  @apply justify-between;
+  @apply outline-none;
+}
+.sidebar-label {
+  @apply py-1;
+}
+
+.sidebar-button,
+.sidebar-item,
+.sidebar-label {
+  box-sizing: border-box;
+  @apply relative;
+  @apply flex;
+  @apply items-center;
+  @apply w-full;
+  @apply text-base;
+  @apply text-left;
+  @apply rounded-lg;
+
+  &.active {
+    @apply bg-white/10;
+    @apply text-secondary;
+    @apply rounded-r-lg;
+    @apply rounded-l-sm;
+    @apply border-l-[3px];
+    @apply border-secondary;
+
+    & > span,
+    & > div > span {
+      @apply left-[53px];
+    }
+  }
+}
+
+.sidebar-button,
+.sidebar-item {
+  @apply min-h-[40px];
+
+  &:hover,
+  &:active {
+    @apply text-secondary;
+    @apply bg-white/10;
+  }
+
+  & > span,
+  & > div > span {
+    @apply absolute;
+    @apply left-14;
+    @apply truncate;
+    width: calc(100% - 50px);
+  }
+}
+
+.sidebar-popover {
+  @apply p-1;
+  @apply rounded-md;
+  @apply bg-base-100;
+  @apply min-w-[200px];
+  @apply shadow-lg;
+  @apply ml-2;
+  @apply border;
+  @apply border-base-200;
+
+  & .sidebar-item > span {
+    position: unset;
+    left: unset;
+    width: 100%;
+
+    & small {
+      line-height: 0;
+    }
+  }
+}

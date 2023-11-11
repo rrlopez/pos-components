@@ -1,0 +1,31 @@
+*::-webkit-scrollbar {
+  @apply block;
+  @apply w-2;
+  @apply h-2;
+}
+
+*::-webkit-scrollbar-button {
+  @apply hidden;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+*::-webkit-scrollbar-track-piece {
+  @apply bg-transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-gray-500;
+  @apply rounded-md;
+}
+
+*.scrollbar-hover::-webkit-scrollbar-thumb {
+  @apply bg-transparent;
+  @apply rounded-md;
+}
+
+*.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  @apply bg-gray-500;
+}
